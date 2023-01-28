@@ -7,9 +7,6 @@ import {StringUtils} from "./libraries/StringUtils.sol";
 import "hardhat/console.sol";
 
 contract Domains {
-    constructor(){
-        console.log("My Polygon L2 ENS");
-    }
 
     string public tld;
 
@@ -35,7 +32,7 @@ contract Domains {
 
     function register(string calldata name) public payable {
         require(domains[name] == address(0));
-        uint _price = price[name];
+        uint _price = price(name);
 
         require(msg.value >= _price, "Not enough Matic");
 
