@@ -57,7 +57,7 @@ contract Domains is ERC721URIStorage {
         string memory json = Base64.encode(
             abi.encodePacked(
                 '{"name":"',
-                _name
+                _name,
                 '","description": "A domain on the Drugs Name Service", "image": "data:image/svg+xml;base64,',
                 Base64.encode(bytes(finalSvg)),
                 '","length":"',
